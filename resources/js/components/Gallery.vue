@@ -175,8 +175,8 @@
       validateFileSize(file) {
         if (300 && ((file.size / 1024) > 300)) {
           this.$toasted.error(this.__(
-            'Maximum file size is :amount MB',
-            {amount: String(this.field.maxFileSize / 1024)}
+            'Maximum file size is :amount KB',
+            {amount: String(300)}
           ));
           return false;
         }
