@@ -24,13 +24,16 @@
     <span v-else-if="!editable" class="mr-3">&mdash;</span>
 
     <span v-if="editable" class="form-file">
-      Our custom component
       <input :id="`__media__${field.attribute}`" :multiple="multiple" ref="file" class="form-file-input" type="file" @change="add"/>
       <label :for="`__media__${field.attribute}`" class="form-file-btn btn btn-default btn-primary" v-text="label"/>
     </span>
 
     <p v-if="hasError" class="my-2 text-danger">
       {{ firstError }}
+    </p>
+
+    <p v-if="showCustomError" class="my-2 text-danger">
+      {{ customErrorMessage }}
     </p>
   </div>
 </template>
@@ -66,6 +69,8 @@
     data() {
       return {
         mouseOver: false,
+        showCustomError: false,
+        customErrorMessage: 'The image size must not exceed 300kb',
         cropImage: null,
         images: this.value,
         customPropertiesImageIndex: null,
@@ -168,7 +173,7 @@
         return this.validateFileSize(file) && this.validateFileType(file);
       },
       validateFileSize(file) {
-        if (this.field.maxFileSize && ((file.size / 1024) > this.field.maxFileSize)) {
+        if (300 && ((file.size / 1024) > 300)) {
           this.$toasted.error(this.__(
             'Maximum file size is :amount MB',
             {amount: String(this.field.maxFileSize / 1024)}
