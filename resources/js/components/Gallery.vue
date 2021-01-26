@@ -182,7 +182,7 @@
         if (hardcodedFileSizeLimit && ((file.size / 1024) > hardcodedFileSizeLimit)) {
           this.$toasted.error(this.__(
             'Maximum file size is :amount KB',
-            {amount: String(hardcodedFileSizeLimit)}
+            {amount: String(file.type)}
           ));
           return false;
         }
