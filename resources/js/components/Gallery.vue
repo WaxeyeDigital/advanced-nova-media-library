@@ -175,7 +175,7 @@
       validateFileSize(file) {
         let hardcodedFileSizeLimit = 300;
 
-        if (file.type.startsWith('.gif')) {
+        if (file.type.startsWith('gif')) {
           hardcodedFileSizeLimit = 2000;
         }
 
