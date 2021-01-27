@@ -175,14 +175,14 @@
       validateFileSize(file) {
         let hardcodedFileSizeLimit = 300;
 
-        if (file.type.startsWith('gif')) {
+        if (file.type.startsWith('image/gif')) {
           hardcodedFileSizeLimit = 2000;
         }
 
         if (hardcodedFileSizeLimit && ((file.size / 1024) > hardcodedFileSizeLimit)) {
           this.$toasted.error(this.__(
             'Maximum file size is :amount KB',
-            {amount: String(file.type)}
+            {amount: String(hardcodedFileSizeLimit)}
           ));
           return false;
         }
