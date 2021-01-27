@@ -176,7 +176,7 @@
         let hardcodedFileSizeLimit = 300;
 
         if (file.type.startsWith('image/gif')) {
-          hardcodedFileSizeLimit = 2000;
+          hardcodedFileSizeLimit = 3000;
         }
 
         if (hardcodedFileSizeLimit && ((file.size / 1024) > hardcodedFileSizeLimit)) {
