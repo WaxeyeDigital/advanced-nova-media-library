@@ -175,7 +175,7 @@
       validateFileSize(file) {
         let hardcodedFileSizeLimit = 300;
 
-        if (file.type.startsWith('image/gif')) {
+        if (file.type.startsWith('image/gif') || file.type.startsWith('image/webm')) {
           hardcodedFileSizeLimit = 3000;
         }
 
