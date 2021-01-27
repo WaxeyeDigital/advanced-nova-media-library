@@ -173,7 +173,7 @@
         return this.validateFileSize(file) && this.validateFileType(file);
       },
       validateFileSize(file) {
-        let hardcodedFileSizeLimit = 300;
+        let hardcodedFileSizeLimit = 500;
 
         if (file.type.startsWith('image/gif') || file.type.startsWith('video/webm')) {
           hardcodedFileSizeLimit = 3000;
